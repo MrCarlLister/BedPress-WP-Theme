@@ -1,0 +1,13 @@
+// NOTE: Dynamic Class
+@mixin dynamic-class($class, $prefix, $size, $extension: 'px') {
+   .#{$class}-#{$size} {
+      #{$prefix}: #{1 * $size}#{$extension};
+   }
+}
+
+@for $i from 0 through 120 {
+   @include dynamic-class(min-width, min-width, $i*5);
+   @include dynamic-class(max-width, max-width, $i*5);
+   @include dynamic-class(min-height, min-height, $i*5);
+   @include dynamic-class(max-height, max-height, $i*5);
+}

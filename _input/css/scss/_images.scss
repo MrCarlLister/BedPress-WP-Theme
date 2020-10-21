@@ -1,0 +1,49 @@
+.icon--social {
+   display: inline-block;
+   width: 32px;
+   height: 32px;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.icon--facebook {
+   background-image: url(./img/icon/icon--facebook.png);
+   background-image: url(./img/icon/icon--facebook.svg),
+      linear-gradient(transparent, transparent);
+   background-size: cover;
+}
+
+.icon--twitter {
+   background-image: url(./img/icon/icon--twitter.png);
+   background-image: url(./img/icon/icon--twitter.svg),
+      linear-gradient(transparent, transparent);
+   background-size: cover;
+}
+
+.icon--instagram {
+   background-image: url(./img/icon/icon--instagram.png);
+   background-image: url(./img/icon/icon--instagram.svg),
+      linear-gradient(transparent, transparent);
+   background-size: cover;
+}
+
+.icon--facebook-white {
+   background-image: url(./img/icon/icon--facebook-white.png);
+   background-image: url(./img/icon/icon--facebook-white.svg),
+      linear-gradient(transparent, transparent);
+   background-size: cover;
+}
+
+.icon--twitter-white {
+   background-image: url(./img/icon/icon--twitter-white.png);
+   background-image: url(./img/icon/icon--twitter-white.svg),
+      linear-gradient(transparent, transparent);
+   background-size: cover;
+}
+
+.icon--instagram-white {
+   background-image: url(./img/icon/icon--instagram-white.png);
+   background-image: url(./img/icon/icon--instagram-white.svg),
+      linear-gradient(transparent, transparent);
+   background-size: cover;
+}

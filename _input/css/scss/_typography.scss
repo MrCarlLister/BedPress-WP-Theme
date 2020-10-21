@@ -1,0 +1,20 @@
+.cta-link {
+   font-weight: 800;
+   text-decoration: none;
+
+   &:hover {
+      text-decoration: none;
+   }
+}
+
+.link--no-underline {
+   text-decoration: none;
+
+   &:hover {
+      text-decoration: none;
+
+      * {
+         text-decoration: none;
+      }
+   }
+}
