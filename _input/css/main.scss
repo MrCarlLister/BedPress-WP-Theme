@@ -1,30 +1,21 @@
-@import "./node_modules/bootstrap-scss/functions";
-@import "scss/_variables";
-@import "./node_modules/bootstrap-scss/mixins";
+// @import "../../node_modules/tailwindcss/base.css";
+// @import "../../node_modules/tailwindcss/components.css";
+// @import "../../node_modules/tailwindcss/utilities.css";
 
-// Optional
-// @import "./node_modules/bootstrap-scss/reboot";
-// @import "./node_modules/bootstrap-scss/type";
-// @import "./node_modules/bootstrap-scss/images";
-// @import "./node_modules/bootstrap-scss/code";
-// @import "./node_modules/bootstrap-scss/forms";
-// @import "./node_modules/bootstrap-scss/card";
-// @import "./node_modules/bootstrap-scss/buttons";
-// @import "./node_modules/bootstrap-scss/grid";
-// @import "./node_modules/bootstrap-scss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @import "scss/setup/variables";
+// @import "scss/setup/dynamic-classes";
+@import "scss/setup/mixin";
+@import "scss/setup/fonts";
 
 
-// @import "scss/_mixin.scss";
-// @import "scss/_spacing.scss";
-// @import "scss/_slider.scss";
-// @import "scss/_login.scss";
-// @import "scss/_bg.scss";
-// @import "scss/_btn.scss";
-// @import "scss/_cards.scss";
-// @import "scss/_forms.scss";
-// @import "scss/_tables.scss";
-// @import "scss/_typography.scss";
-// @import "scss/_lists.scss";
-// @import "scss/_nav.scss";
-// @import "scss/_images.scss";
-// @import "scss/_fonts.scss";
+// @import "scss/assets/document";
+@import "scss/assets/typography";
+@import "scss/assets/bg";
+// @import "scss/assets/images";
+
+
+// @import "scss/utility/sizing";

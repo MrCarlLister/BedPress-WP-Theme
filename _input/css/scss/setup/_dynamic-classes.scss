@@ -1,0 +1,22 @@
+//* Buttons
+// Name, bg colour 1, bg colour 2, text colour
+$buttons: (
+  ("primary", $primary, $secondary, $brand-white, $primary, lighten($secondary,10%), $brand-white),
+//   ("white", $brand-white, $brand-white)
+);
+
+//* Fonts
+$fonts: (
+    dark: $brand-black,
+    plain: $brand-white,
+    primary: $primary
+);
+
+//* Background Colour
+// NOTE: bg--colour_option e.g .bg--colour_primary
+$bg: (
+    dark: $brand-black,
+    plain: $brand-white,
+    primary: $primary,
+    secondary: $secondary,
+);

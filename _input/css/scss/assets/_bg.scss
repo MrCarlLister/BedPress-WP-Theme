@@ -1,0 +1,43 @@
+.bg-gradient-blue-to-indigo
+{
+    @apply bg-gradient-to-r; 
+    @apply from-blue;
+    @apply to-indigo;
+}
+
+.bg-gradient-red-to-blue   
+{
+    @apply bg-gradient-to-r; 
+    @apply from-red-darker;
+    @apply to-blue-darker;
+
+}
+
+
+.bg-gradient-blue-to-red   
+{
+    @apply bg-gradient-to-r; 
+    @apply from-blue-darker;
+    @apply to-red-darker;
+
+}
+
+
+
+
+.border-x
+{
+@include gradient-animation(#4E2EC0, #EE5A47, .5s);
+border: double 3px transparent;
+// background-image: linear-gradient(to right, #4E2EC0, #EE5A47), 
+//                   linear-gradient(to right, #EE5A47, #4E2EC0);
+background-origin: border-box;
+background-clip: content-box, border-box;
+
+&:hover
+{
+
+                  border: strong 3px transparent;
+                
+}
+}

@@ -8,9 +8,13 @@
 @include_once('_includes/scripts.php');
 @include_once('_includes/wp-styles.php');
 
-// Add Post Types
-// @include_once('_includes/_post-types/autoload.php');
-// @include_once('_includes/_taxonomy/autoload.php');
+
+// Get functions, for getting data
+@include_once('_includes/get.php');
+
+
+// Render functions, for rendering html
+@include_once('_includes/render.php');
 
 // Add Menus
 @include_once('_includes/menus.php');

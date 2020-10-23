@@ -6,6 +6,7 @@
 
 get_header(); ?>
 
-<?php include(locate_template('parts/all-modules.php')); ?>
+<?php include(locate_template('parts/elements/hero-feature.php')); ?>
+
 
 <?php get_footer();

@@ -13,14 +13,16 @@ const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const concat_value = 'main.js';
 const autoprefixer = require('autoprefixer');
+const tailwindcss = require('tailwindcss');
 
 const post_css_plugins = [
+    tailwindcss('tailwind.config.js'),
     autoprefixer({
         overrideBrowserslist: 'last 4 versions',
         supports: false,
         flexbox: "no-2009",
         grid: "autoplace"
-    }),
+    })
 ];
 
 // COMMENT: Set paths of directories

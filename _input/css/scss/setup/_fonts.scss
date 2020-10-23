@@ -1,0 +1,36 @@
+// @font-face {
+//     font-family: 'aguda_reg';
+//     src: url('../fonts/aguda_regular-webfont.eot');
+//     src: url('../fonts/aguda_regular-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('../fonts/aguda_regular-webfont.woff') format('woff'),
+//          url('../fonts/aguda_regular-webfont.ttf') format('truetype'),
+//          url('../fonts/aguda_regular-webfont.svg#aguda_regular-webfont') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+@layer base {
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap');
+    @font-face {
+        font-family: Aguda Reg;
+        src: url(../fonts/aguda_regular-webfont.eot);
+        src: url(../fonts/aguda_regular-webfont.eot?#iefix) format('embedded-opentype'),
+             url(../fonts/aguda_regular-webfont.woff) format('woff'),
+             url(../fonts/aguda_regular-webfont.ttf) format('truetype'),
+             url(../fonts/aguda_regular-webfont.svg#aguda_regular-webfont) format('svg');
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: Aguda Bold;
+        src: url(../fonts/aguda_black-webfont.eot);
+        src: url(../fonts/aguda_black-webfont.eot?#iefix) format('embedded-opentype'),
+             url(../fonts/aguda_black-webfont.woff) format('woff'),
+             url(../fonts/aguda_black-webfont.ttf) format('truetype'),
+             url(../fonts/aguda_black-webfont.svg#aguda_black-webfont) format('svg');
+        // font-weight: 500;
+        font-style: normal;
+    }
+
+ 
+  }

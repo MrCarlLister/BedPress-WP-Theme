@@ -1,0 +1,79 @@
+// // NOTE: Dynamic Class
+// @mixin dynamic-class($class, $prefix, $size, $extension: 'px') {
+//    .#{$class}-#{$size} {
+//       #{$prefix}: #{1 * $size}#{$extension};
+//    }
+// }
+
+// @for $i from 0 through 120 {
+//    @include dynamic-class(min-width, min-width, $i*5);
+//    @include dynamic-class(max-width, max-width, $i*5);
+//    @include dynamic-class(min-height, min-height, $i*5);
+//    @include dynamic-class(max-height, max-height, $i*5);
+// }
+
+
+// //* Loop for button colours
+// // Generate Button Classes 
+// // Name, text-colour, text-colour:hover
+// @each $x in $buttons {
+//    .btn--#{nth($x,1)} {
+//       background: linear-gradient(90deg, #{nth($x,2)} 0%, #{nth($x,3)} 100%);
+      
+
+//      color: #{nth($x,4)};
+//      transition: all 1.0s;
+//      &:hover
+//      {
+//       color: #{nth($x,7)};
+//          background: linear-gradient(90deg, #{nth($x,5)} 0%, #{nth($x,6)} 100%);
+//        transition: all 1.0s;
+//        cursor: pointer;
+//      }
+//    }
+//  }
+
+// //* Loop for button colours
+// // Generate Button Classes 
+// // Name, text-colour, text-colour:hover
+// @each $x in $bg {
+//    .bg-colour--#{nth($x,1)} {
+//      background-color:#{nth($x,2)};
+//    }
+//  }
+
+
+
+@mixin gradient-animation( $start, $end, $transTime ){
+   background-size: 100%;
+   background-image:   linear-gradient(to left, $start, $end),
+                       linear-gradient(to left, $end, $start);
+   position: relative;
+   z-index: 100;
+   &:before {
+     background-image:     linear-gradient(to left, $end, $start);
+       @apply rounded-md;
+       background-origin: border-box;
+        background-clip: content-box, border-box;
+        overflow: hidden;
+        border: single 3px transparent;
+     content: '';    
+     display: block;
+     height: 100%;
+     position: absolute;
+     top: 0; left: 0;
+     opacity: 0;
+     width: 100%;
+     z-index: -100;
+     transition: opacity $transTime;
+
+   }
+   &:hover {
+       
+      &:before {
+        opacity: 1; 
+        
+        
+      }
+   }
+ }
