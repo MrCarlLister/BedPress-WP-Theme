@@ -11,12 +11,14 @@ h4,
 h5,
 h6
 {
-    @apply font-impact-bold;
+    
     @apply leading-none;
+    @apply font-impact;
 
     span
     {
-        @apply font-impact;
+        
+        @apply font-impact-bold;
     }
 }
 
@@ -57,9 +59,17 @@ h6 {
 .link-x
 {
     @apply bg-clip-text;
-    
     @apply text-red;
     
+}
+
+.link-primary-gradient
+{
+    @apply bg-clip-text;
+    color:transparent;
+    @apply bg-gradient-to-r;
+    @apply from-red;
+    @apply to-blue-darker;
 }
 
 #menu-main-menu

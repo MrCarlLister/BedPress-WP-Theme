@@ -10730,12 +10730,12 @@ html{
 }
 
 h1,h2,h3,h4,h5,h6{
-  font-family: Aguda Bold;
-  line-height: 1
+  line-height: 1;
+  font-family: Aguda Reg
 }
 
 h1 span,h2 span,h3 span,h4 span,h5 span,h6 span{
-  font-family: Aguda Reg
+  font-family: Aguda Bold
 }
 
 h1{
@@ -10776,6 +10776,18 @@ h5{
   --text-opacity: 1;
   color: #ED5E3E;
   color: rgba(237, 94, 62, var(--text-opacity))
+}
+
+.link-primary-gradient{
+  -webkit-background-clip: text;
+          background-clip: text;
+  color:transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--gradient-color-stops)));
+  background-image: -o-linear-gradient(left, var(--gradient-color-stops));
+  background-image: linear-gradient(to right, var(--gradient-color-stops));
+  --gradient-from-color: #ED5E3E;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(237, 94, 62, 0));
+  --gradient-to-color: #4E2EC0
 }
 
 #menu-main-menu a{
