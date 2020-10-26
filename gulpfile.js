@@ -14,6 +14,8 @@ const imagemin = require('gulp-imagemin');
 const concat_value = 'main.js';
 const autoprefixer = require('autoprefixer');
 const tailwindcss = require('tailwindcss');
+const cssnano = require('cssnano');
+var babel = require('gulp-babel');
 
 const post_css_plugins = [
     tailwindcss('tailwind.config.js'),
@@ -22,7 +24,10 @@ const post_css_plugins = [
         supports: false,
         flexbox: "no-2009",
         grid: "autoplace"
-    })
+    }),
+        cssnano({
+            preset: 'default',
+        })
 ];
 
 // COMMENT: Set paths of directories
@@ -65,34 +70,58 @@ gulp.task('images', () =>
 );
 
 // COMMENT: Concatenate & Minify JS
-gulp.task('scripts', function () {
+gulp.task('scripts', async function () {
     let scriptSuccess = true; // Set to true, if an error occurs, this will change to false and stop the end message displaying success.
     //    return gulp.src([paths.scripts], {
-    return gulp.src([
-            '_input/js/libs/micromodal.min.js',
-            '_input/js/libs/slick.min.js',
-            '_input/js/tide.js',
-            '_input/js/slider.js',
-            '_input/js/modals.js',
-        ], {
-            emitCompileError: true // This is needed to allow custom messaging
-        })
-        .pipe(plumber())
-        .pipe(concat(concat_value))
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(uglify())
-        .on('error', function () {
-            log.info(color('Error compiling JS', 'RED'));
-            scriptSuccess = false;
-        })
 
-        .pipe(gulp.dest(paths.scripts_output))
-        .on('end', () => {
-            if (scriptSuccess)
-                log.info(color('Compiled scripts.', 'GREEN'));
-        });
+    gulp.src([
+        'node_modules/babel-polyfill/dist/polyfill.js',
+        '_input/js/libs/*'
+    ]) // Read from these directories
+    .pipe(babel())
+    .pipe(plumber())
+    // .pipe(concat(concat_value))
+    .pipe(rename({
+        suffix: '.min'
+    }))
+    .pipe(uglify())
+    .on('error', function () {
+        log.info(color('Error compiling JS', 'RED'));
+        scriptSuccess = false;
+    })
+
+    .pipe(gulp.dest('_output/js/libs/'))
+    .on('end', () => {
+        if (scriptSuccess)
+            log.info(color('Compiled scripts.', 'GREEN'));
+    });
+});
+
+// COMMENT: Concatenate & Minify JS
+gulp.task('bundler', function () {
+    let scriptSuccess = true; // Set to true, if an error occurs, this will change to false and stop the end message displaying success.
+    //    return gulp.src([paths.scripts], {
+
+    gulp.src([
+        '_input/js/bundler/*'
+    ]) // Read from these directories
+    .pipe(babel())
+    .pipe(plumber())
+    .pipe(concat(concat_value))
+    .pipe(rename({
+        suffix: '.min'
+    }))
+    .pipe(uglify())
+    .on('error', function () {
+        log.info(color('Error compiling JS', 'RED'));
+        scriptSuccess = false;
+    })
+
+    .pipe(gulp.dest(paths.scripts_output))
+    .on('end', () => {
+        if (scriptSuccess)
+            log.info(color('Compiled scripts.', 'GREEN'));
+    });
 });
 
 gulp.task('sass', function () {
@@ -124,7 +153,7 @@ gulp.task('watch', function () {
     // gulp.watch(paths.sass_all, gulp.series('sass'));
     gulp.watch(paths.sass_all, gulp.series('sass', 'css'));
     gulp.watch(paths.fonts, gulp.series('fonts'));
-    gulp.watch(paths.scripts, gulp.series('scripts'));
+    gulp.watch(paths.scripts, gulp.series('scripts','bundler'));
     gulp.watch(paths.images, gulp.series('images'));
 });
 

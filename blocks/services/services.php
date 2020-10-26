@@ -4,7 +4,7 @@
     <?php
     for ($k = 0 ; $k <5; $k++){
     
-        include(locate_template('parts/elements/single-service.php')); 
+        include(locate_template('parts/elements/single/single-service.php')); 
     }
 
     include(locate_template('parts/elements/cta-panel.php'));

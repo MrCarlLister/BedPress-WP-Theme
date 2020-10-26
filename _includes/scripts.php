@@ -4,14 +4,22 @@
 //
 
 
-function ee__enqueue_script() {
+function ee_mph__enqueue_script() {
 
 	// remove jquery to avoid conflicts
 	wp_deregister_script('jquery');
 	
-	// add new jquery, popper and bootstrap.
+	/**
+	 * JQUERY
+	 */
 	wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', array(), null, true);
-	// wp_enqueue_script('jqueryScrollReveal-defer', 'https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js', array('jquery'), null);
+
+	/**
+	 * REGISTER BUT DON'T ENQUEUE
+	 */
+
+	wp_register_script('bespokeSliderLibrary', 'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js', array('jquery'), null);
+	wp_register_script('bespokeSliderController',  get_template_directory_uri().'/_output/js/libs/bespokeSliderController.min.js', array('jquery'), null);
 	// wp_enqueue_script('jqueryParallax', 'https://cdnjs.cloudflare.com/ajax/libs/rellax/1.10.0/rellax.min.js', array('jquery'), null, true);
 	// wp_enqueue_script('recaptcha3-defer', 'https://www.google.com/recaptcha/api.js?render='.RECAPT_SITE, array('jquery'), null, false);
 
@@ -26,7 +34,7 @@ function ee__enqueue_script() {
 	wp_enqueue_script( 'main-script', get_template_directory_uri().'/_output/js/main.min.js', array('jquery'), time() );
 }
 
-add_action( 'wp_enqueue_scripts', 'ee__enqueue_script' );
+add_action( 'wp_enqueue_scripts', 'ee_mph__enqueue_script' );
 
 
 // ────────────────────────────────────────────────────────────────────────────────
