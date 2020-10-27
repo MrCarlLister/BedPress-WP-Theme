@@ -1,11 +1,11 @@
-<div style="background-image:url('https://source.unsplash.com/random')" class="relative bg-after-gradient-dark-purple bg-cover px-5 py-10 md:p-20">
+<div style="background-image:url('https://source.unsplash.com/random')" class="relative bg-after-gradient-dark-purple bg-cover px-5 py-10 md:px-20 md:py-40">
     
 
-    <div class="z-20 relative">
+    <div class="z-20 relative max-w-screen-xl mx-auto">
         
 
-        <div class="flex">
-            <div class="mr-10 hidden md:inline-block flex-none">
+        <div class="flex items-center">
+            <div class="mr-20 hidden md:inline-block flex-none">
                 <img src="https://source.unsplash.com/random/300x300">
             </div>
             <div>

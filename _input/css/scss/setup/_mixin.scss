@@ -44,19 +44,55 @@
 
 
 
-@mixin gradient-animation( $start, $end, $transTime ){
+@mixin gradient-animation-border( $start, $end, $transTime ){
    background-size: 100%;
-   background-image:   linear-gradient(to left, $start, $end),
-                       linear-gradient(to left, $end, $start);
+   background-size: 100%;
+   background-image:   linear-gradient(to left, $start 0, $end 100%),
+                      linear-gradient(to left, $end 0, $start 50%, $end 100%);
+
    position: relative;
    z-index: 100;
    &:before {
-     background-image:     linear-gradient(to left, $end, $start);
-       @apply rounded-md;
+    background-image:     linear-gradient(to left,  $end 0, $start 50%, $end 100%);
+    @apply rounded-md;
        background-origin: border-box;
         background-clip: content-box, border-box;
         overflow: hidden;
         border: single 3px transparent;
+     content: '';    
+     display: block;
+     height: 100%;
+     position: absolute;
+     top: 0; left: 0;
+     opacity: 0;
+     width: 100%;
+     z-index: -100;
+     transition: opacity $transTime;
+
+   }
+   &:hover {
+       
+      &:before {
+        opacity: 1; 
+        
+        
+      }
+   }
+ }
+
+@mixin gradient-animation( $start, $end, $transTime ){
+   background-size: 100%;
+   background-image:   linear-gradient(to left, $start, $end),
+                       linear-gradient(to left, $end, $start);
+
+   position: relative;
+   z-index: 100;
+   &:before {
+     background-image:     linear-gradient(to left, $end, $start);
+       @apply rounded-2xl;
+       background-origin: border-box;
+        background-clip: content-box, border-box;
+        overflow: hidden;
      content: '';    
      display: block;
      height: 100%;

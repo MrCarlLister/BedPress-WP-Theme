@@ -28,3 +28,4 @@
 
 </head>
 <body>
+<?php include(locate_template('parts/elements/navigation-band.php')); ?>

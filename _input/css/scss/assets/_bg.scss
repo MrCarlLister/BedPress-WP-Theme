@@ -27,7 +27,8 @@
 
 .border-x
 {
-    @include gradient-animation(#4E2EC0, #EE5A47, .5s);
+    @include gradient-animation-border(#4E2EC0, #EE5A47, .5s);
+    z-index: 0!important;
     border: double 3px transparent;
     background-origin: border-box;
     background-clip: content-box, border-box;
@@ -35,9 +36,23 @@
     &:hover
     {
 
-        border: strong 3px transparent;
+        border: double 3px transparent;
                     
     }
+}
+
+.bg-x
+{
+    @include gradient-animation(#4E2EC0, #EE5A47, .5s);
+    z-index: 0!important;
+  
+
+    // &:hover
+    // {
+
+    //     border: double 3px transparent;
+                    
+    // }
 }
 
 .bg-after-darkest

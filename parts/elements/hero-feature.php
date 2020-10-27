@@ -1,4 +1,3 @@
-<?php include(locate_template('parts/elements/navigation-band.php')); ?>
 
 <div class="w-full mx-auto min-h-screen bg-gradient-blue-to-indigo">
     <div class="lg:grid grid-cols-12 grid-rows-6 gap-20 px-5 md:px-20 py-10 md:py-0 h-full">

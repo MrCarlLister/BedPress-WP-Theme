@@ -1,4 +1,4 @@
-<div class="w-full bg-black-darker fixed z-20 bg-opacity-90 px-10">
+<div class="w-full bg-black-darker fixed z-50 bg-opacity-90 px-10">
     <div class="flex items-center my-6">
         
         <div class="flex-grow-0">
