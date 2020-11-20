@@ -15,7 +15,21 @@ const concat_value = 'main.js';
 const autoprefixer = require('autoprefixer');
 const tailwindcss = require('tailwindcss');
 const cssnano = require('cssnano');
+const fs = require('fs');
+const path = require('path');
+const postcss    = require('gulp-postcss')
+
+// const purgecss = require('gulp-purgecss');
+const purgecss = require('@fullhuman/postcss-purgecss')
+const merge = require('merge-stream');
+
 var babel = require('gulp-babel');
+
+class TailwindExtractor {
+    static extract(content) {
+      return content.match(/[A-z0-9-:\/]+/g)
+    }
+}
 
 const post_css_plugins = [
     tailwindcss('tailwind.config.js'),
@@ -79,7 +93,6 @@ gulp.task('scripts', async function () {
         '_input/js/libs/*'
     ]) // Read from these directories
     .pipe(babel())
-    .pipe(plumber())
     // .pipe(concat(concat_value))
     .pipe(rename({
         suffix: '.min'
@@ -146,6 +159,14 @@ gulp.task('css', function () {
         .pipe(gulp.dest('_output/css'))
 
 })
+
+
+function getFolders(dir) {
+    return fs.readdirSync(dir)
+      .filter(function(file) {
+        return fs.statSync(path.join(dir, file)).isDirectory();
+      });
+}
 
 
 // COMMENT: Watch for changes on JS/SASS/Images

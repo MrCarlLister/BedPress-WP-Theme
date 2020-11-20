@@ -74,3 +74,19 @@ function ee__email_client($data)
 
   return $html;
 }
+
+
+//------------------------------------------------
+// Admin CSS
+//------------------------------------------------
+
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts()
+{
+  echo
+    '<style>
+    .wp-block {max-width: 1200px;}
+    #editor .editor-styles-wrapper{font-family: Raleway,Lato,Lucida Grande,Tahoma,Sans-Serif;
+  </style>';
+}

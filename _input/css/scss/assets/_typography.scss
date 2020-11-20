@@ -84,3 +84,44 @@ h5 {
         }
     }
 }
+
+.markdown {
+    // @apply text-lg; 
+    // @apply leading-normal;
+
+    & > * + *,  & li + li, & li > p + p {
+      @apply mt-6;
+    }
+    & strong {
+      @apply font-bold;
+    }
+    & a {
+      @apply text-black;
+      @apply font-semibold;
+    }
+    & strong a {
+    }
+    & h2 {
+
+    }
+    & h3 {
+      
+    }
+    & code {
+
+    }
+    & pre code {
+      @apply block;
+      @apply p-4;
+      @apply rounded;
+    }
+    & blockquote {
+ 
+    }
+    & ul, & ol {
+      @apply pl-5;
+      @screen sm {
+        @apply pl-10;
+      }
+    }
+  }

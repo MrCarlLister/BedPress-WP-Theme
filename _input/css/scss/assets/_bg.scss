@@ -41,6 +41,20 @@
     }
 }
 
+.gradient-border
+{
+    border:double 4px transparent;
+}
+.gradient-border:focus
+{
+    border: double 4px transparent;
+  @apply rounded-xl;
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left,#4E2EC0,#ee5a47);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+}
+
 .bg-x
 {
     @include gradient-animation(#4E2EC0, #EE5A47, .5s);

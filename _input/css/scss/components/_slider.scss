@@ -1,0 +1,15 @@
+.carousel-prev,
+.carousel-next {
+	&.disabled {
+		cursor: default;
+		opacity: 0.4;
+	}
+}
+
+.glider-slide {
+	opacity: 0.5;
+
+	&.visible {
+		opacity: 1;
+	}
+}
